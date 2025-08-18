@@ -13,7 +13,7 @@ public class CalculadoraJenkins {
     }
 
     public int sumar(int a, int b) {
-        int resultado = a - b;
+        int resultado = a + b;
         historial.add((double) resultado);
         return resultado;
     }
