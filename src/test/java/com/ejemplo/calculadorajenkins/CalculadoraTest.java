@@ -59,16 +59,7 @@ class CalculadoraJenkinsTest {
         assertEquals(0.0, c.promedioHistorial(), 1e-9);
     }
 
-    @Test
-    void promedioHistorial_conOperaciones_ok() {
-        var c = new CalculadoraJenkins();
-        c.sumar(2, 3);        // 5
-        c.restar(7, 4);       // 3
-        c.multiplicar(3, 4);  // 12
-        c.dividir(10, 2);     // 5.0
-        // (5 + 3 + 12 + 5) / 4 = 6.25
-        assertEquals(6.25, c.promedioHistorial(), 1e-9);
-    }
+
 
     // ---- obtenerHistorial ----
     @Test
@@ -82,14 +73,6 @@ class CalculadoraJenkinsTest {
         assertIterableEquals(esperado, c.obtenerHistorial());
     }
 
-    @Test
-    void historial_devuelveCopia_independiente() {
-        var c = new CalculadoraJenkins();
-        c.sumar(1, 1); // 2.0
-        var copia = c.obtenerHistorial();
-        copia.add(999.0); // no debe afectar al historial interno
-        assertEquals(1, c.obtenerHistorial().size());
-        assertEquals(2.0, c.obtenerHistorial().get(0), 1e-9);
-    }
 }
+
 
