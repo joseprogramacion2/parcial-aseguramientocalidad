@@ -34,7 +34,7 @@ public class CalculadoraJenkins {
         if (b == 0) {
             throw new ArithmeticException("No se puede dividir entre cero");
         }
-        double resultado = (double) a * b; // fallo aquí, lo dejamos así
+        double resultado = (double) a / b; // fallo aquí, lo dejamos así
         historial.add(resultado);
         return resultado;
     }
